@@ -283,25 +283,4 @@
     }
     sel_single_work_data_controller()
 
-    //配合選的名字呈現的單一工讀生table(我這邊有傳名字+row_id，你要想辦法呈現的時候只有名字而已，但要有Row_id這個variable)
-    // function sel_single_work_data_controller() {
-    //     $.ajax({
-    //         url: '../controller/schedule_controller.php',
-    //         data: {
-    //             year: localStorage["year"],
-    //             month: localStorage["month"],
-    //             name: localStorage["name"],
-    //             OpType: 'edit_data_controller',
-    //         },
-    //         dataType: "text",
-    //         type: 'POST'
-    //     }).done(function(res) {
-    //         console.log(res);
-    //         var obj = JSON.parse(res);
-    //         console.log(obj);
-    //         //塞資料塞在這
-    //         // showTable(obj);
-    //     })
-    // };
-    // sel_single_work_data_controller();
 </script>
