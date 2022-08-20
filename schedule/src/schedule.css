@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap');
+
+.title {
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.wrap {
+    width: 95%;
+    margin: auto;
+    padding: 50px 0;
+}
+
+/* .btn-group{
+    display: flex;
+}
+
+#btn_delete{
+    border-radius: 0 5px 5px 0;
+}
+
+#btn_print {
+    margin-left: auto;
+} */
+
+#btn_save {
+    font-size: 16.5px;
+}
