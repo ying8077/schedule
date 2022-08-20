@@ -21,7 +21,6 @@
             <a href="../view/modify_view.php" class="btn btn-secondary" onclick="set()">修改</a>
             <button type="button" class="btn btn-secondary" id="btn_delete">刪除</button>
             <button type="button" class="btn btn-secondary" onclick="print()" value="列印" id="btn_print">列印</button>
-            <!-- <button type="button" onclick="print()" value="列印" id="btn_print"><img src="../src/print.png" height="35" width="30"></button> -->
         </div>
         <div id="print-area">
             <table class="table table-striped">
@@ -239,7 +238,6 @@
                 document.getElementById("month_span").innerHTML = 1 + "月";
             }
             $("#user_name option").remove();
-            //物件中的某一種物件(空白)：$("#div1 p").addClass('d1');
             sel_name();
         })
         $('#month_select').change(function() {
@@ -255,11 +253,6 @@
                 $("#tbd_" + j).find("td").eq(i).html(obj[i].Series[j]);
             }
         }
-        // for (var i = 0; i < 5; i++) {
-        //     for (var j = 0; j < 8; j++) {
-        //         $("#tbd").find("td").eq(5 * j + i).html(obj[i].Series[j + 1]);
-        //     }
-        // }
     }
 
     function sel_work_data_controller() {
@@ -293,17 +286,15 @@
                 OpType: 'sel_name_controller'
             }
         }
-        // console.log(data);
+        
         await $.ajax({
             url: '../controller/schedule_controller.php',
             data: data,
             dataType: 'text',
             type: 'POST',
-            // async: false,
         }).done(function(res) {
             // console.log(res);
             var str = JSON.parse(res);
-            //我在schedule_controller裡面有寫個取當年月的工讀生名字，你把他接到你的名字的下拉式選單，但記得要跟年月做配合
             addName(str);
 
         }).fail(function(error) {
@@ -347,24 +338,6 @@
             console.log(error);
         });
     };
-
-    // function sel_single_work_data_controller() {
-    //     $.ajax({
-    //         url: '../controller/read_controller.php',
-    //         data: {
-    //             'OpType': 'sel_single_work_data_controller',
-    //         },
-    //         dataType: "text",
-    //         type: 'POST'
-    //     }).done(function(res) {
-    //         console.log(res);
-    //         var obj = JSON.parse(res);
-    //         console.log(obj);
-    //         //塞資料塞在這
-    //         // showTable(obj);
-    //     })
-    // };
-    // sel_single_work_data_controller();
 
     function print() {
         $('#hid_thead').hide();
